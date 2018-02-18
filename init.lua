@@ -4,8 +4,8 @@ local Warn1 = 0
 local Warn2 = 0
 local Warn3 = 0
 
-local Hour = 06 -- in 24-Hour-Format
-local Min = 22
+local ServerHour = 06 -- in 24-Hour-Format
+local ServerMinute = 22
 
 function alerter.check(hour, minute, alert, Message)
 
@@ -43,17 +43,17 @@ end -- check()
 ]]--
 
 minetest.register_globalstep(function(dtime)
-	Warn1 = alerter.check(Hour, Min, Warn1, "Attention, Server will Shutdown for Backup in 3 Minutes.")
+	Warn1 = alerter.check(ServerHour, ServerMinute, Warn1, "Attention, Server will Shutdown for Backup in 3 Minutes.")
 
 end)
 
 minetest.register_globalstep(function(dtime)
-	Warn2 = alerter.check(Hour, Min + 1, Warn2, "Attention, Server will Shutdown for Backup in 2 Minute.")
+	Warn2 = alerter.check(ServerHour, ServerMinute + 1, Warn2, "Attention, Server will Shutdown for Backup in 2 Minute.")
 
 end)
 
 minetest.register_globalstep(function(dtime)
-	Warn3 = alerter.check(Hour, Min + 2, Warn3, "Attention, Server will Shutdown for Backup in 1 Minute.")
+	Warn3 = alerter.check(ServerHour, ServerMinute + 2, Warn3, "Attention, Server will Shutdown for Backup in 1 Minutes.")
 
 end)
 
