@@ -56,4 +56,6 @@ minetest.register_globalstep(function(dtime)
 	Warn3 = alerter.check(Hour, Min + 2, Warn3, "Attention, Server will Shutdown for Backup in 1 Minute.")
 
 end)
- 
+
+minetest.log("action","[MOD] " .. minetest.get_current_modname() .. " loaded.") 
+print("[MOD] " .. minetest.get_current_modname() .. " loaded.")
